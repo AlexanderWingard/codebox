@@ -1,0 +1,11 @@
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+code {
+    display: block;
+}
