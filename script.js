@@ -15,13 +15,17 @@ function blockify(preTag) {
         var indent = count_indent(line);
         var div = document.createElement("code");
         if(indent > 0) {
-            div.style.marginLeft = (indent) + "ex";
+            div.style['padding-left'] = (indent) + "ch";
+            console.log(indent)
+            div.style['text-indent'] = (- indent)   + "ch";
         }
         var trimmed = line.trim();
         if(trimmed == "") {
             trimmed = "&nbsp;";
         }
-        div.innerHTML = trimmed;
+        var indentation = '<span>' + '&nbsp'.repeat(indent) + '</span>';
+        div.innerHTML = indentation + trimmed;
+
         document.body.appendChild(div);
     });
     document.body.removeChild(preTag);
